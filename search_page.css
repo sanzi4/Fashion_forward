@@ -1,0 +1,112 @@
+html *
+{
+   font-size: 1em !important;
+   color: white !important;
+   font-family: font-family:'Comfortaa', cursive !important
+}
+* {
+    box-sizing: border-box;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #FFFFFF;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #ec7063;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.search{
+  width: 10px;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.column{
+  /*flex: 50%;*/
+  padding: 0 4px;
+  width: 33%;
+}
+.column img{
+  margin-top: 8px;
+  text-align: middle;
+  width: 100%;
+}
+.left_side {
+  float: left;
+  width: 50%;
+}
+.right_side{
+  /* content: ""; */
+  display: inline-block;
+  clear: both;
+  width: 50%;
+}
+.right_side img{
+  width: 100px;
+  text-align: center;
+}
+
+.button{
+  color: white;
+  background-color: #e35d6a;
+  border-radius: 5px;
+  border-color: black;
+  padding: 5px 5px 5px 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin: center;
+}
+.You{
+  color: white;
+  background-color:#e35d6a;
+  border radius: 5px;
+  border-color: black;
+  padding: 2px 2px 2px 2x;
+  text-decoration: none;
+}
+h2{
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  }
+
+.Location{
+  color: white;
+  background-color:#d29985;
+  border radius: 5px;
+  border-color: black;
+  padding: 2px 2px 2px 2x;
+  text-decoration: none;
+}
+.image{
+  width: 100px;
+  display: inline-block;
+  margin: 3px 3px 10px 10px
+}

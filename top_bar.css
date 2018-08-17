@@ -1,0 +1,30 @@
+/* body{
+  background-image: url("media/a.png");
+} */
+html *
+{
+   font-size: 1em !important;
+   color: white !important;
+   font-family:'Comfortaa', cursive !important
+}
+.icon-bar {
+    width: 100%; /* Full-width */
+    background-color: #ec7063; /* Dark-grey background */
+    position: fixed;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+
+.icon-bar a {
+    display: inline-block;
+    width: 30%;
+    float: center; /* Float links side by side */
+    padding: 10px 10px 10px 10px; /* Some top and bottom padding */
+    color: white; /* White text color */
+    text-decoration: none;
+}
+
+.icon-bar a:hover {
+    background-color:#eec1ad; /* Add a hover color */
+}

@@ -44,12 +44,12 @@ body {
   left: 0;
   width: 100%;
   height: 135px;
+  font-family: font-family:'Comfortaa', cursive;
 }
 #username {
   padding: 20px;
   text-align: right;
-  color: #e35d6a;
+  color: #d29985;
   text-shadow: 2px 2px #FFFFFFF;
   font-size: 30px;
-  font-family: "Comfortaa"
 }

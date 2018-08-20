@@ -28,3 +28,6 @@ html *
 .icon-bar a:hover {
     background-color:#eec1ad; /* Add a hover color */
 }
+#GPS{
+  width: 20%;
+}

@@ -1,8 +1,9 @@
 .icon-bar {
     width: 100%; /* Full-width */
-    background-color: #e35d6a; /* Dark-grey background */
+    background-color: #ec7063; /* Dark-grey background */
     position: fixed;
     bottom: 0;
+    left: 0;
     text-align: center;
 }
 

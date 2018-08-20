@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<link rel="stylesheet" href="mood.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+
+
+</head>
+
+<body class="body">
+  <div class="icon-bar">
+    <!-- two people icon for feed page -->
+    <a href="#"><img src="media/feed.png" id="feed"></img></a>
+    <!-- home button for home page "favoritespage.html" -->
+    <a href="favoritespage.html"><img src="media/home.png" id="love" class="button"></img></a>
+    <!-- shop button for map page -->
+    <a href="search_page.html"><img src="media/bag.png" id="shop" class="button"></img></a>
+    <!-- heart button for favorites page -->
+    <a href="profile_page.html"><img src="media/profile.png" id="profile" class="button"></img></a>
+  </div>
+
+<!-- texts and names for css -->
+  <div class="store_list">
+    <h2>Favorite Stores</h2>
+
+    <div class="Stores" id="fav_stores">
+      <!-- Everlane -->
+      <div class="store_outline">
+
+        <div class="store_main">
+          <span class="store_name" id="fav_1" onclick="show_description('fav_1')">Everlane</span>
+          <div class="store_classif">
+            <ul>
+              <li><img class="stars" src="4stars.png"></img></li>
+              <li>$</li>
+            </ul>
+          </div>
+        </div>
+        <div class="store_desc" id="fav_1_desc">
+          <div class="store_desc_col1">
+            Location:<br>
+            28 Prince St.<br>
+            New York,NY 10012
+          <br><br><br>
+            Hours<br>
+            Sunday: 11am-6pm<br>
+            Monday–Friday: 11am–8pm<br>
+            Saturday: 10am-7pm
+
+          </div>
+          <div class="store_desc_col2">
+            <img src="everlane.jpg" width="232px" height="150px"></img>
+            <p>At Everlane, we want the right choice to be as easy as putting on a great T-shirt. That’s why we partner with the best, ethical factories around the world. Source only the finest materials. And share those stories with you—down to the true cost of every product we make. It’s a new way of doing things. We call it Radical Transparency.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Patagonia -->
+      <div class="store_outline">
+
+        <div class="store_main">
+          <span class="store_name" id= "fav_2" onclick="show_description('fav_2')">Patagonia</span>
+          <div class="store_classif">
+            <ul>
+              <li><img class="stars" src="stars.png"></img></li>
+              <li>$</li>
+            </ul>
+          </div>
+        </div>
+        <div class="store_desc" id="fav_2_desc">
+          <div class="store_desc_col1">
+            Location:<br>
+
+            72 Greene St<br>
+            New York, NY 10012<br>
+
+            Hours<br>
+            Sunday: 12pm-6pm<br>
+            Monday–Saturday: 11am–7pm
+
+          </div>
+          <div class="store_desc_col2">
+            <img src="patagonia.jpg" width="232px" height="150px"></img>
+            <p>SoHo carries the the broadest selection of quality Patagonia gear for the whole family for snow sports, climbing, trail running, fly fishing, travel and everyday living. We occupy three floors of a six-story building known as the King of Greene Street, built in 1872 and beautifully remodeled with reclaimed materials. Check out our regularly scheduled events and meet our product savvy, environmentally active team.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Eileen -->
+      <div class="store_outline">
+
+        <div class="store_main">
+          <span class="store_name" id="fav_3" onclick="show_description('fav_3')">Eileen Fisher</span>
+          <div class="store_classif">
+            <ul>
+              <li><img class="stars" src="stars.png"></img></li>
+              <li>$</li>
+            </ul>
+          </div>
+        </div>
+        <div class="store_desc" id="fav_3_desc">
+          <div class="store_desc_col1">
+            Location:<br>
+            395 West Broadway<br>
+            New York, NY 10012
+          <br><br><br>
+            Hours<br>
+            Monday-Saturday: 11am-7pm<br>
+            Sunday: 12pm-6pm<br>
+
+          </div>
+          <div class="store_desc_col2">
+            <img src="eileen.png" width="232px" height="150px"></img>
+            <p>We have to be responsible for our products from the very beginning—how they're made, who's making them and how those people are treated, all the way until the clothes land back in the earth.<br> -EILEEN FISHER</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="store_list">
+    <h2>Donation Spots</h2>
+
+    <div class="Stores" id="fav_stores">
+      <div class="store_outline">
+        <!-- NYC Rescue Mission -->
+        <div class="store_main">
+          <span class="store_name" id="don_1" onclick="show_description('don_1')">NYC Rescue Mission</span>
+          <div class="store_classif">
+            <ul>
+              <li><img class="stars" src="4stars.png"></img></li>
+              <li>$</li>
+            </ul>
+          </div>
+        </div>
+        <div class="store_desc" id="don_1_desc">
+          <div class="store_desc_col1">
+            Location:<br>
+            90 Laffayette St.<br>
+            New York, NY 10013<br>
+            <br><br><br>
+            Open 24 Hours
+
+          </div>
+          <div class="store_desc_col2">
+            <img src="nycrescue.png" width="232px" height="150px"></img>
+            The New York City Rescue Mission exists to provide help and hope to the hungry, homeless and hurting men and women of New York City. You can help by donationing food, money, and/or clothes at our location or online. We accept any kind of help.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- The Salvation Army -->
+      <div class="store_outline">
+
+        <div class="store_main">
+          <span class="store_name" id="don_2" onclick="show_description('don_2')">The Salvation Army</span>
+          <div class="store_classif">
+            <ul>
+              <li><img class="stars" src="4stars.png"></img></li>
+              <li>$</li>
+            </ul>
+          </div>
+        </div>
+        <div class="store_desc" id="don_2_desc">
+          <div class="store_desc_col1">
+            Location:<br>
+            536 W 46th<br>
+            New York, NY 10036<br>
+            <br><br><br>
+            Open:<br>
+            Monday-Saturday:10am-8pm<br>
+            Closed on Sundays
+          </div>
+          <div class="store_desc_col2">
+            <img src="thesalvation.png" width="232px" height="150px"></img>
+            Your donations to Salvation Army Family Stores help fund rehabilitation programs that heal addictions, change lives, and restore families.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Out of the Closet -->
+      <div class="store_outline">
+
+        <div class="store_main">
+          <span class="store_name" id="don_3" onclick="show_description('don_3')">Out of the Closet</span>
+          <div class="store_classif">
+            <ul>
+              <li><img class="stars" src="stars.png"></img></li>
+              <li>$</li>
+            </ul>
+          </div>
+        </div>
+        <div class="store_desc" id="don_3_desc">
+          <div class="store_desc_col1">
+            Location:<br>
+            475 Atlantic Ave.<br>
+            Brooklyn, NY 11217<br>
+            <br><br><br>
+            Open:<br>
+            Monday-Saturday:10am-7pm<br>
+            Sunday:10am-6pm
+          </div>
+          <div class="store_desc_col2">
+          <img src="outofthecloset.jpg" width="232px" height="150px"></img>
+          Out of the Closet began with a single thrift shop in Los Angeles, with the goal of providing the community with both a great place to shop for gently-used items, and a safe space to go for free and confidential HIV testing services.Since that time, 96¢ of every dollar collected by Out of the Closet thrift stores has gone to fund HIV services in your community and around the world.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <!-- image imports -->
+
+  <div>
+    <br><br><br><br>
+  </div>
+
+
+  <script type="text/javascript">
+    function show_description(target_id){
+      target = target_id + "_desc"
+      current_display = document.getElementById(target).style.display;
+      if(current_display != 'block'){
+        document.getElementById(target).style.display = "block";
+      } else {
+        document.getElementById(target).style.display = "none";
+      }
+    }
+  </script>
+</body>

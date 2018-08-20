@@ -1,0 +1,73 @@
+h1{
+  font-size: 50px;
+}
+
+#Title {
+  font-family: "Comfortaa";
+  align-content: center;
+  text-align: center;
+  color: #e35d6a;
+}
+
+h3 {
+  text-align: center;
+}
+
+section{
+  width: 100%
+}
+
+.leftcolumn p{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.leftcolumn {
+    float: left;
+    width: 50%;
+    height: 200px;
+    font-family: "Comfortaa";
+    padding: 75px 0px 75px 0px;
+    text-align: center;
+    background: #eec1ad;
+}
+
+.rightcolumn p{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.rightcolumn {
+    width: 50%;
+    height: 200px;
+    float: right;
+    text-align: center;
+    font-family: "Comfortaa";
+    padding: 75px 0px 75px 0px;
+    background: #c98276;
+  }
+
+#Picture1{
+    float: right;
+    padding-right: 0%;
+    padding-left: 0%;
+    margin-left: 0;
+    width: 50%;
+    height: 350px;
+    /*margin-bottom: 5%;*/
+}
+
+#Picture2{
+    width:50%;
+    height: 350px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0px 0px;
+    float: left;
+}
+
+#Picture3{
+  float: right;
+  width: 50%;
+  height: 350px;
+}

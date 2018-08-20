@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fashion Forward - Contact</title>
+    <link rel="stylesheet" href="Contact.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+  </head>
+  <body>
+    <div id=Title><h1>Contact Us</h1></div>
+
+<div id="Intro">
+  <p>If you have any concerns, you can contact us through this form. </p>
+</div>
+
+<form action="action_page.html">
+  <div class="container">
+    <p>Please fill in this to contact us.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="name"><b>Name</b></label>
+    <input type="message" placeholder="Enter Full Name" name="name" required>
+
+    <label for="message"><b>Message</b></label>
+    <input type="message" placeholder="Enter Message" name="message" required>
+  <hr>
+
+    <button type="submit" class="registerbtn">Submit</button>
+  </div>
+</form>
+
+<h3>More Resources</h3>
+<div class="row">
+  <div class="column">
+    <h4>Books</h4>
+    <button><a href="https://www.amazon.com/Overdressed-Shockingly-High-Cheap-Fashion/dp/1591846544">Overdressed: The Shockingly High Cost of Cheap Fashion
+      By Elizabeth Cline</a></button>
+      <p>Written from a strong US perspective with a chapter dedicated to the development of fast fashion in America, Cline sets out to investigate the true cost of cheap fashion, visiting factories in Bangladesh and China and exploring the fate of castoffs given to the Salvation Army. (Synopsis by Hannah Gould from the Guardian)</p>
+    <button><a href="https://www.amazon.ca/Naked-Fashion-The-Sustainable-Revolution/dp/1780260415">Naked Fashion: The Sustainable Revolution
+      By Safia Minney</a></button>
+      <p>Founder and CEO of Fair Trade fashion label People Tree, Minney's book offers an overview of the most pressing challenges facing the fashion industry and shares a positive look at alternative business models with a list of eco-friendly fashion brands. (Synopsis by Hannah Gould from the Guardian)</p>
+    <button><a href="https://www.amazon.ca/Fashion-Sustainability-Design-Kate-Fletcher/dp/B00ANYUDEG/ref=pd_sim_b_1/188-2452939-8674169?ie=UTF8&refRID=0NY9HFEQZ5EN5P3EXN4A">Fashion and Sustainability
+      By Kate Fletcher and Lynda Grose</a></button>
+      <p>The successor to Fletcher's first book, Sustainable Fashion & Textiles – Design Journeys, Fletcher and Grose explore sustainable fashion from a designer's perspective, presenting the role of the designer in accelerating sustainable change as a communicator, activist and entrepreneur. (Synopsis by Hannah Gould from the Guardian)</p>
+  </div>
+  <div class="column">
+    <h4>Documentaries</h4>
+    <button><a href="https://truecostmovie.com/">The True Cost</a></button>
+      <p>This is a story about clothing. It’s about the clothes we wear, the people who make them, and the impact the industry is having on our world. The price of clothing has been decreasing for decades, while the human and environmental costs have grown dramatically. The True Cost is a groundbreaking documentary film that pulls back the curtain on the untold story and asks us to consider, who really pays the price for our clothing? (Synopsis from truecostmovie.com/about/)</p>
+    <button><a href="https://www.youtube.com/watch?v=RXmnBbUjsPs">Walmart: The High Cost of Low Price</a></button>
+      <p>The film presents a negative picture of Wal-Mart’s business practices through interviews with former employees, small business owners, and footage of Wal-Mart executives. The documentary argues that Wal-Mart underpays its workers, paying them an average of $17,000 per year (in 2005 dollars). (Synopsis from trustedclothes.com)</p>
+    <button><a href="https://www.youtube.com/watch?v=AOc9dhmScRY">The Machinists</a></button>
+      <p>A vivid and moving documentary in which the personal stories of three female Bangladeshi garment workers and the boss of a fledgling trade union in Dhaka intersect to portray the human cost of western high street fashion. (Synopsis from trustedclothes.com)</p>
+  </div>
+  
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+  </body>
+</html>

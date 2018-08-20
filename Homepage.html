@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Fashion Forward</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'>
+  <script src='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet'>
+  <link rel="stylesheet" href="map_markers.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+  <link rel="stylesheet" href="mood.css">
+  <script src="Homepage.js"></script>
+
+</head>
+<body>
+
+<div id='map'></div>
+<ul id='marker-list'></ul>
+
+<!-- <div id="popup"><img src="Fashion Forward Logo.png" onload="logopopup()"></div> -->
+
+
+<style>
+#popupContent{
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+}
+</style>
+
+<!--logo pops up when page is loaded-->
+<!-- <script>
+function logopopup() {
+    document.getElementById("popup").style.display = "block";
+}
+
+</script> -->
+
+<!-- jQuery is required for this example. -->
+<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoiamVmZnN0ZXJuIiwiYSI6IlAzRFFiN0EifQ.mNWvayrLEw9wULuq0sopyA';
+var map = L.mapbox.map('map', 'mapbox.streets');
+var myLayer = L.mapbox.featureLayer().addTo(map);
+var markerList = document.getElementById('marker-list');
+
+var geoJson = [{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-74.01207629999999,40.7133882]},
+    "properties": {
+        'title': 'Everlane',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/everlane1.png',"At Everlane, we want the right choice to be as easy as putting on a great T-shirt. That’s why we partner with the best, ethical factories around the world. Source only the finest materials. And share those stories with you—down to the true cost of every product we make. It’s a new way of doing things. We call it Radical Transparency."],
+          ['media/everlane2.png','Hours: Monday-Friday: 11 am-8pm'],
+          ['media/everlane3.png','Location: 28 Prince St., New York, NY 10012']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-73.99186399999996,40.7251244]},
+    "properties": {
+        'title': 'Patagonia - Bowery',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/patagonia.png','Patagonia was one of the earliest defenders of environmental ethics in the activewear fashion industry, and one of the first adopters of using recycled materials and switching to organic cotton. Patagonia is expanding its commitment to labor ethics as well by working with Fair Trade Certified factories in India, Sri Lanka, and Los Angeles. '],
+          ['media/patagonia2.png','Hours: Monday-Saturday: 11am-7pm Sunday: 12pm-6pm Location: 72 Greene Street, New York, NY 10012'],
+          ['media/patagonia3.png','Best For | Fair trade outdoor clothing, Price Range | $$']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": {"type": "Point", "coordinates": [-74.00059980000003,40.7232188]},
+    "properties": {
+        'title': 'Patagonia - SoHo',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/patagonia.png','Patagonia was one of the earliest defenders of environmental ethics in the activewear fashion industry, and one of the first adopters of using recycled materials and switching to organic cotton. Patagonia is expanding its commitment to labor ethics as well by working with Fair Trade Certified factories in India, Sri Lanka, and Los Angeles. '],
+          ['media/patagonia2.png','Hours: Monday-Saturday: 11am-7pm Sunday: 12pm-6pm Location: 72 Greene Street, New York, NY 10012'],
+          ['media/patagonia3.png','Best For | Fair trade outdoor clothing, Price Range | $$']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-73.98662480000002,40.7287179]},
+    "properties": {
+        'title': 'Eileen Fisher- East Village',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/eileenfisher1.png','Eileen Fisher is an industry leader in ethical and sustainable fashion. They believe social and environmental injustices are a reason to do business completely differently, and carefully oversee their supply chain to ensure fair working wages. By 2020, their vision is to have 100% organic cotton and linen fibers, responsible dyes, carbon positive operations and a no-waste facility. '],
+          ['media/eileenfisher2.png','Location: 314 East 9th Street, New York, NY 10003'],
+          ['media/eileenfisher3.png','Product Range | Womens apparel, accessories, Price Range | $$$$']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", 'coordinates': [-73.9906014,40.7407172]},
+    "properties": {
+        'title': 'Eileen Fisher - Flatiron',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/eileenfisher1.png','Eileen Fisher is an industry leader in ethical and sustainable fashion. They believe social and environmental injustices are a reason to do business completely differently, and carefully oversee their supply chain to ensure fair working wages. By 2020, their vision is to have 100% organic cotton and linen fibers, responsible dyes, carbon positive operations and a no-waste facility. '],
+          ['media/eileenfisher2.png','Location: 166 Fifth Avenue Between 21St St. & 22Nd St., New York, NY 10010'],
+          ['media/eileenfisher3.png','Product Range | Womens apparel, accessories, Price Range | $$$$']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-74.0018953,40.7241335]},
+    "properties": {
+        'title': 'Eileen Fisher - SoHo',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/eileenfisher1.png','Eileen Fisher is an industry leader in ethical and sustainable fashion. They believe social and environmental injustices are a reason to do business completely differently, and carefully oversee their supply chain to ensure fair working wages. By 2020, their vision is to have 100% organic cotton and linen fibers, responsible dyes, carbon positive operations and a no-waste facility. '],
+          ['media/eileenfisher2.png','Location: 395 West Broadway, New York, NY 10012'],
+          ['media/eileenfisher3.png','Product Range | Womens apparel, accessories, Price Range | $$$$']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-73.97375119999998,40.7598619]},
+    "properties": {
+        'title': 'Eileen Fisher - Midtown',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/eileenfisher1.png','Eileen Fisher is an industry leader in ethical and sustainable fashion. They believe social and environmental injustices are a reason to do business completely differently, and carefully oversee their supply chain to ensure fair working wages. By 2020, their vision is to have 100% organic cotton and linen fibers, responsible dyes, carbon positive operations and a no-waste facility. '],
+          ['media/eileenfisher2.png','Location: 521 Madison Avenue, New York, NY 10022'],
+          ['media/eileenfisher3.png','Product Range | Womens apparel, accessories, Price Range | $$$$']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-74.0005562,40.71932400000001]},
+    "properties": {
+        'title': 'Reformation - SoHo',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/reformation1.png','For the sustainable fashionista, Reformation offers on-trend pieces that will still be stylish well after the season is over. This Los Angeles-based brand creates products only from sustainable and upcycled materials in a fair wage environment. Reformation’s dedication to sustainable production is extensively explained on their website in their signature bold and unabashed style, plus each item comes with a description of its environmental footprint.'],
+          ['media/reformation2.png','Hours: Mon-Sat: 11am-8pm, Sun: 11am-7pm Location: 23 Howard St., New York, NY, 10013'],
+          ['media/reformation3.png','Product Range | Womens tops, bottoms, dresses, outerwear, denim, bridal, Price Range | $$$']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-73.99333309999997,40.7260279]},
+    "properties": {
+        'title': 'Reformation - Bond',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/reformation2.png','For the sustainable fashionista, Reformation offers on-trend pieces that will still be stylish well after the season is over. This Los Angeles-based brand creates products only from sustainable and upcycled materials in a fair wage environment. Reformation’s dedication to sustainable production is extensively explained on their website in their signature bold and unabashed style, plus each item comes with a description of its environmental footprint.'],
+          ['media/reformation1.png','Hours: Mon-Sat: 11am-8pm, Sun: 11am-7pm Location: 39 Bond St., New York, NY, 10012'],
+          ['media/reformation3.png','Product Range | Womens tops, bottoms, dresses, outerwear, denim, bridal, Price Range | $$$']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-74.0117876,40.7155612]},
+    "properties": {
+        'title': 'Krochet Kids - Tribeca',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/krochet1.png','Krochet Kids Intl. is an all-time favorite for their affordable, on-trend clothing, and for the incredible impact they have on the communities where their artisans live and work. The non-profit social impact brand empowers their artisans in Uganda and Peru not only through fair wages, but also through education and mentoring programs. Krochet Kids has developed an extensive monitoring and evaluation system that measures a series of empowerment indicators every month, ensuring that every person in their program is impacted for good.'],
+          ['media/krochet2.png','Phone: 212-349-6555 Location: 270 Greenwich Street NEW YORK, NY 10007'],
+          ['media/krochet3.png','Product Range | Apparel & accessories Price Range | $']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-73.9924341,40.72376]},
+    "properties": {
+        'title': 'Krochet Kids - Bowery',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/krochet4.png','Krochet Kids Intl. is an all-time favorite for their affordable, on-trend clothing, and for the incredible impact they have on the communities where their artisans live and work. The non-profit social impact brand empowers their artisans in Uganda and Peru not only through fair wages, but also through education and mentoring programs. Krochet Kids has developed an extensive monitoring and evaluation system that measures a series of empowerment indicators every month, ensuring that every person in their program is impacted for good.'],
+          ['media/krochet3.png','Phone: 212-420-1320 Location: 95 East Houston Street NEW YORK, NY 10002'],
+          ['media/krochet2.png','Product Range | Apparel & accessories Price Range | $']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-73.98607830000002,40.6935296]},
+    "properties": {
+        'title': 'Krochet Kids - Chelsea',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/krochet3.png','Krochet Kids Intl. is an all-time favorite for their affordable, on-trend clothing, and for the incredible impact they have on the communities where their artisans live and work. The non-profit social impact brand empowers their artisans in Uganda and Peru not only through fair wages, but also through education and mentoring programs. Krochet Kids has developed an extensive monitoring and evaluation system that measures a series of empowerment indicators every month, ensuring that every person in their program is impacted for good.'],
+          ['media/krochet1.png','Phone: 212-924-5969 Location: 250 Seventh Avenue NEW YORK, NY 10001'],
+          ['media/krochet2.png','Product Range | Apparel & accessories Price Range | $']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-73.988823,40.675473]},
+    "properties": {
+        'title': 'Krochet Kids - Brooklyn',
+        'marker-color': '#e35d6a',
+        'marker-symbol': 'shop',
+        'marker-size': 'large',
+        'images': [
+          ['media/krochet2.png','Krochet Kids Intl. is an all-time favorite for their affordable, on-trend clothing, and for the incredible impact they have on the communities where their artisans live and work. The non-profit social impact brand empowers their artisans in Uganda and Peru not only through fair wages, but also through education and mentoring programs. Krochet Kids has developed an extensive monitoring and evaluation system that measures a series of empowerment indicators every month, ensuring that every person in their program is impacted for good.'],
+          ['media/krochet3.png','Phone: 918-879-0493 Location: 214 3rd Street BROOKLYN, NY 11215'],
+          ['media/krochet4.png','Product Range | Apparel & accessories Price Range | $']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-74.001561,40.717518]},
+    "properties": {
+        'title': 'NYC Rescue Mission',
+        'marker-color': '#dbac98',
+        'marker-symbol': 'clothing-store',
+        'marker-size': 'large',
+        'images': [
+          ['media/rescue1.png','The New York City Rescue Mission exists to provide help and hope to the hungry, homeless and hurting men and women of New York City.'],
+          ['media/rescue2.png','Location: 90 Lafayette St., New York, NY 10013'],
+          ['media/rescue3.png','Phone: 212-226-6214 ext 134 *Please call before dropping off']
+        ]
+    }
+},{
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates": [-73.995502,40.76287]},
+    "properties": {
+        'title': 'Salvation Army',
+        'marker-color': '#dbac98',
+        'marker-symbol': 'clothing-store',
+        'marker-size': 'large',
+        'images': [
+          ['media/rescue1.png','The Salvation Army, an international movement, is an evangelical part of the universal Christian Church. Its message is based on the Bible. Its ministry is motivated by the love of God. Its mission is to preach the gospel of Jesus Christ and to meet human needs in His name without discrimination.'],
+          ['media/rescue2.png','Location: 536 W. 46th St.,New York, NY, 10036'],
+          ['media/rescue3.png','Phone: 800-SA-TRUCK']
+        ]
+    }
+}];
+
+// Add custom popup html to each marker.
+myLayer.on('layeradd', function(e) {
+    var marker = e.layer;
+    var feature = marker.feature;
+    var images = feature.properties.images
+    var slideshowContent = '';
+
+    for(var i = 0; i < images.length; i++) {
+        var img = images[i];
+
+        slideshowContent += '<div class="image' + (i === 0 ? ' active' : '') + '">' +
+                              '<img src="' + img[0] + '" />' +
+                              '<div class="caption">' + img[1] + '</div>' +
+                            '</div>';
+    }
+
+    // Create custom popup content
+    var popupContent =  '<div id="' + feature.properties.id + '" class="popup">' +
+                            '<h2>' + feature.properties.title + '</h2>' +
+                            '<div class="slideshow">' +
+                                slideshowContent +
+                            '</div>' +
+                            '<div class="cycle">' +
+                                '<a href="#" class="prev">&laquo; Previous</a>' +
+                                '<a href="#" class="next">Next &raquo;</a>' +
+                            '</div>'
+                        '</div>';
+
+    // http://leafletjs.com/reference.html#popup
+    marker.bindPopup(popupContent,{
+        closeButton: true,
+        minWidth: 320
+    });
+});
+
+// marker slideshow
+$('#map').on('click', '.popup .cycle a', function() {
+    var $slideshow = $('.slideshow'),
+        $newSlide;
+
+    if ($(this).hasClass('prev')) {
+        $newSlide = $slideshow.find('.active').prev();
+        if ($newSlide.index() < 0) {
+            $newSlide = $('.image').last();
+        }
+    } else {
+        $newSlide = $slideshow.find('.active').next();
+        if ($newSlide.index() < 0) {
+            $newSlide = $('.image').first();
+        }
+    }
+
+    $slideshow.find('.active').removeClass('active').hide();
+    $newSlide.addClass('active').show();
+    return false;
+});
+
+// zoom in on location when list is clicked
+function zoomin(i){
+  map.setView([geoJson[parseInt(i)].geometry.coordinates[1], geoJson[parseInt(i)].geometry.coordinates[0]], 18);
+}
+
+for (var i=0; i<geoJson.length; i++){
+	var item = markerList.appendChild(document.createElement('li'));
+    item.innerHTML = "<button onclick='zoomin(" + i.toString() + ")'" + "class=markerbutton>" + geoJson[i].properties.title + "</button>";
+  }
+
+// Add features to the map
+myLayer.setGeoJSON(geoJson);
+
+map.setView([40.75,-73.99], 13);
+
+</script>
+
+<div w3-include-html="bar.html"></div>
+<script>
+  includeHTML();
+</script>
+
+</body>
+</html>

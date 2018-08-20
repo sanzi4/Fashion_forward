@@ -1,0 +1,83 @@
+body {
+  margin:0; padding:0;
+}
+#map {
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:100%;
+}
+
+#marker-list {
+  position:absolute;
+  top:0; right:0; width:200px;
+  bottom:0;
+  overflow-x:auto;
+  background:#fff;
+  margin:0;
+  padding:5px;
+}
+#marker-list li {
+  padding:2px;
+  margin:0;
+  list-style-type:none;
+  font-family:"Comfortaa";
+  align-items: center;
+}
+/* #marker-list li:hover {
+  background:#e35d6a;
+} */
+
+.popup {
+  text-align:center;
+  font-family: "Comfortaa"
+}
+
+.popup .slideshow .image {
+  display:none;
+}
+
+.popup .slideshow .image.active {
+  display:block;
+}
+
+.popup .slideshow img {
+  width:100%;
+  }
+
+.popup .slideshow .caption {
+  background:white;
+  padding:10px;
+  }
+
+.popup .cycle {
+  padding:10px 0 20px;
+  }
+
+.popup .cycle a.prev {
+  float:left;
+}
+
+.popup .cycle a.next {
+  float:right;
+}
+
+.cycle{
+  color:#e35d6a;
+}
+
+.markerbutton{
+  position: relative;
+  background: white;
+  border: none;
+  font-family: "Comfortaa";
+  text-align: left;
+  padding: 10px 20px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: white;
+}
+
+.markerbutton:hover {
+  background:#e35d6a;
+}

@@ -1,24 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<link rel="stylesheet" href="mood.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="mood.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+  <script src="page.js"></script>
 
-
+  <title>Fashion Forward- Favorites </title>
 </head>
 
 <body class="body">
-  <div class="icon-bar">
-    <!-- two people icon for feed page -->
-    <a href="#"><img src="media/feed.png" id="feed"></img></a>
-    <!-- home button for home page "favoritespage.html" -->
-    <a href="favoritespage.html"><img src="media/home.png" id="love" class="button"></img></a>
-    <!-- shop button for map page -->
-    <a href="search_page.html"><img src="media/bag.png" id="shop" class="button"></img></a>
-    <!-- heart button for favorites page -->
-    <a href="profile_page.html"><img src="media/profile.png" id="profile" class="button"></img></a>
-  </div>
-
 <!-- texts and names for css -->
   <div class="store_list">
     <h2>Favorite Stores</h2>
@@ -228,6 +219,10 @@
     <br><br><br><br>
   </div>
 
+  <div w3-include-html="bar.html"></div>
+  <script>
+    includeHTML();
+  </script>
 
   <script type="text/javascript">
     function show_description(target_id){

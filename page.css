@@ -78,8 +78,8 @@ h2{
   text-align: center;
   font-size: 100%;
   text-decoration: none;
-  margin-right: auto;
   float: right;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 14%;
 }

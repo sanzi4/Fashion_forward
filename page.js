@@ -1,3 +1,12 @@
+// Showing the form when the button is clicked
+function Post(){
+  if (document.getElementById('form').style.display == "none"){
+    document.getElementById('form').style.display = "flex";
+  }
+  else {
+    document.getElementById('form').style.display = "none";
+}}
+
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /*loop through a collection of all HTML elements:*/

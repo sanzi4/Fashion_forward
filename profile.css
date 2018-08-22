@@ -49,7 +49,8 @@ body {
 #username {
   padding: 20px;
   text-align: right;
-  color: #d29985;
+  color: white;
   text-shadow: 2px 2px #FFFFFFF;
-  font-size: 30px;
+  font-size: 40px;
+  font-family: "Comfortaa";
 }

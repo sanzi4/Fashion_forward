@@ -141,11 +141,12 @@ button:hover{
 .icon-bar2 {
     width: 100%;
     height: 7%;
-    background-color: #ec7063;
+    background-color: #e35d6a;
     position: fixed;
     top: 0;
     overflow: hidden;
     text-align: center;
+    font-family: "Comfortaa"
 }
 
 .icon-bar2 a {

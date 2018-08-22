@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="mood.css">
   <script src="Homepage.js"></script>
 
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 <body>
 
@@ -18,17 +21,6 @@
 <ul id='marker-list'></ul>
 
 <!-- <div id="popup"><img src="Fashion Forward Logo.png" onload="logopopup()"></div> -->
-
-
-<style>
-#popupContent{
-  position: fixed;
-  width: 80%;
-  height: 80%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-}
-</style>
 
 <!--logo pops up when page is loaded-->
 <!-- <script>
@@ -322,13 +314,22 @@ function zoomin(i){
 
 for (var i=0; i<geoJson.length; i++){
 	var item = markerList.appendChild(document.createElement('li'));
-    item.innerHTML = "<button onclick='zoomin(" + i.toString() + ")'" + "class=markerbutton>" + geoJson[i].properties.title + "</button>";
+    item.innerHTML = "<button onclick='zoomin(" + i.toString() + ")'" + "class=markerbutton>" + geoJson[i].properties.title + "</button><button class='favorite' id='" + i.toString() + "' onclick='ChangeColor(" + i.toString() + ")'><img src='media/home.png' width=20px height=20px></img></button>";
   }
 
 // Add features to the map
 myLayer.setGeoJSON(geoJson);
 
 map.setView([40.75,-73.99], 13);
+
+// click favorites and changes color
+function ChangeColor(i){
+  if ( document.getElementById(i).style.background == "white"){
+    document.getElementById(i).style.background = "#e35d6a";
+  }
+  else {
+    document.getElementById(i).style.background = "white";
+}}
 
 </script>
 

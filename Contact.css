@@ -1,6 +1,7 @@
 
 h1{
   font-size: 50px;
+  padding-top: 20px;
 }
 
 h3{
@@ -91,7 +92,8 @@ hr {
     float: left;
     width: 45%;
     margin: 15px;
-    font-family: "Comfortaa"
+    font-family: "Comfortaa";
+    padding-bottom: 35px;
 }
 
 /* Clear floats after the columns */

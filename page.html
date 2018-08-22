@@ -11,9 +11,28 @@
   </head>
 
   <body>
-    <div class="Post">
+  <button id="post" onclick="Post()">Post your Latest Fashion Find, Upcycling Advice or Fashion Fact</button>
+    <form id="form">
+      <div class="container">
+        <hr>
+        <label for="username"><b>Username</b></label>
+        <input type="message" placeholder="Enter Username" name="username" required>
+
+        <label for="caption"><b>Caption</b></label>
+        <input type="message" placeholder="Enter Caption" name="message" required>
+
+        <label for="file"><b>Optional Image</b></label>
+        <input type="file" placeholder="Upload your Image" name="name" required>
+      <hr>
+
+        <button type="submit" class="registerbtn">Submit</button>
+      </div>
+    </form>
+
+
+    <!-- <div class="Post">
       <a href="https://www.tumblr.com"><img src="media/page.png">Click Here to Post Your Latest Fast Fashion Find</a>
-    </div>
+    </div> -->
     <div class="gallery-container">
       <div class="gallery">
         <div class="top-desc">Melissa</div>
